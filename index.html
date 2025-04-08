@@ -14,11 +14,13 @@
     }
 
     body {
-      font-family: 'Orbitron', sans-serif;
-      background-color: #0f0c29;
-      color: #fff;
-      overflow: hidden;
-      height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0f0c29;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
     }
 
     .homer-intro {
@@ -92,15 +94,15 @@
     }
 
     .container {
-      display: none;
-      z-index: 1;
-      position: relative;
-      width: 90%;
-      max-width: 800px;
-      margin: auto;
-      padding-top: 50px;
-      text-align: center;
-    }
+    display: none;
+    z-index: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 10px;
+    text-align: center;
+    box-sizing: border-box;
+   }
 
     h1 {
       font-size: 2.5em;
