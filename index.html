@@ -13,20 +13,22 @@
       box-sizing: border-box;
     }
 
-    body {
-    font-family: 'Orbitron', sans-serif;
-    background-color: #0f0c29;
-    color: #fff;
-    overflow-x: hidden;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
+    html, body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0f0c29;
+      color: #fff;
+      width: 100%;
+      height: 100%;
+      min-height: 100dvh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .homer-intro {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100dvh;
       background: url('homer.gif') center center / contain no-repeat;
       background-color: #000;
       display: flex;
@@ -34,10 +36,13 @@
       justify-content: center;
       flex-direction: column;
       z-index: 10;
+      position: fixed;
+      top: 0;
+      left: 0;
     }
 
     .homer-intro h2 {
-      font-size: 1.4em;
+      font-size: 1.2em;
       background: #000000aa;
       padding: 10px 20px;
       border-radius: 10px;
@@ -47,7 +52,7 @@
     }
 
     .boton-homer {
-      margin-top: 50vh;
+      margin-top: 45vh;
       padding: 10px 20px;
       background: #ff69b4;
       border: none;
@@ -55,7 +60,7 @@
       color: white;
       font-weight: bold;
       cursor: pointer;
-      font-size: 1.2em;
+      font-size: 1.1em;
       animation: pulse 2s infinite;
     }
 
@@ -94,33 +99,33 @@
     }
 
     .container {
-    display: none;
-    z-index: 1;
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    padding: 40px 10px;
-    text-align: center;
-    box-sizing: border-box;
-   }
+      display: none;
+      z-index: 1;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       color: #ff66cc;
       text-shadow: 0 0 15px #ff99cc;
       animation: glow 2s infinite alternate;
     }
 
     .subtitulo {
-      margin-top: 20px;
-      font-size: 1.3em;
+      margin-top: 15px;
+      font-size: 1.1em;
       color: #66ffcc;
       text-shadow: 0 0 10px #00ffff;
     }
 
     .skzoo-img {
-      margin-top: 30px;
-      width: 90%;
+      margin-top: 25px;
+      width: 100%;
       max-width: 600px;
       border: 4px solid #ffccff;
       border-radius: 20px;
@@ -128,8 +133,8 @@
     }
 
     .detalles {
-      margin-top: 25px;
-      font-size: 1.1em;
+      margin-top: 20px;
+      font-size: 1em;
       color: #eee;
       background: rgba(0,0,0,0.4);
       padding: 15px;
@@ -146,6 +151,13 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8em; }
+      .subtitulo { font-size: 1em; }
+      .detalles { font-size: 0.95em; }
+      .boton-homer { font-size: 1em; margin-top: 40vh; }
+    }
   </style>
 </head>
 <body>
@@ -160,7 +172,7 @@
     <img class="skzoo-img" src="img/skzoo_martina.png" alt="Stray Kids SKZOO">
     <div class="detalles">
       📍 Lugar: Casa de Martina<br>
-      📅 Fecha: Sábado 12 de abril<br>
+      📅 Fecha: Sábado 20 de abril<br>
       🕔 Hora: 17:00 hrs<br>
       🎶 Música, juegos, dulces, sorpresas y más K-POP que nunca<br>
     </div>
@@ -187,3 +199,4 @@
   </script>
 </body>
 </html>
+
