@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación al Cumpleaños de Martina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0f0c29;
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .homer-intro {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: url('homer.gif') center center / contain no-repeat;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .homer-intro h2 {
+      font-size: 1.4em;
+      background: #000000aa;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      color: #0ff;
+      text-align: center;
+    }
+
+    .boton-homer {
+      margin-top: 50vh;
+      padding: 10px 20px;
+      background: #ff69b4;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.2em;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .confetti {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff69b4;
+      opacity: 0.8;
+      animation: confetti-fall 5s linear infinite;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+      }
+    }
+
+    .container {
+      display: none;
+      z-index: 1;
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
+      padding-top: 50px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff66cc;
+      text-shadow: 0 0 15px #ff99cc;
+      animation: glow 2s infinite alternate;
+    }
+
+    .subtitulo {
+      margin-top: 20px;
+      font-size: 1.3em;
+      color: #66ffcc;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .skzoo-img {
+      margin-top: 30px;
+      width: 90%;
+      max-width: 600px;
+      border: 4px solid #ffccff;
+      border-radius: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .detalles {
+      margin-top: 25px;
+      font-size: 1.1em;
+      color: #eee;
+      background: rgba(0,0,0,0.4);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #fff3;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff66cc; }
+      to { text-shadow: 0 0 20px #ff99cc; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="homer-intro" id="homerIntro">
+    <button class="boton-homer" onclick="iniciarInvitacion()">Presiona aquí</button>
+    <h2>Si te llegó esta invitación... ¡es porque te gusta bailar! 🕺🎉</h2>
+  </div>
+  <div class="confetti" id="confetti"></div>
+  <div class="container" id="invitacion">
+    <h1>🎉 ¡Feliz Cumpleaños Martina! 🎉</h1>
+    <div class="subtitulo">Estás invitado a una fiesta inolvidable con Stray Kids</div>
+    <img class="skzoo-img" src="img/skzoo_martina.png" alt="Stray Kids SKZOO">
+    <div class="detalles">
+      📍 Lugar: Casa de Martina<br>
+      📅 Fecha: Sábado 20 de abril<br>
+      🕔 Hora: 17:00 hrs<br>
+      🎶 Música, juegos, dulces, sorpresas y más K-POP que nunca<br>
+    </div>
+  </div>
+
+  <script>
+    function iniciarInvitacion() {
+      document.getElementById('homerIntro').style.display = 'none';
+      document.getElementById('invitacion').style.display = 'block';
+      lanzarConfetti();
+    }
+
+    function lanzarConfetti() {
+      const confettiContainer = document.getElementById('confetti');
+      for (let i = 0; i < 200; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti-piece');
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.backgroundColor = ['#ff69b4', '#0ff', '#fff', '#f0f'][Math.floor(Math.random() * 4)];
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        confettiContainer.appendChild(confetti);
+      }
+    }
+  </script>
+</body>
+</html>
